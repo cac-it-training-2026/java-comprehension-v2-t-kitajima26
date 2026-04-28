@@ -1,12 +1,17 @@
-package q01_basic.question04;
+package q02_advanced.question03;
 
-class Member {
-	//TODO ここから実装する
+import java.util.ArrayList;
+import java.util.List;
+
+import q02_advanced.question02.Coupon;
+
+public class Member {
 	private int id;
 	private String password;
 	private String name;
 	private int age;
 	private int rank;
+	private List<Coupon> coupons;
 
 	/**
 	 * @param id
@@ -22,6 +27,34 @@ class Member {
 		this.name = name;
 		this.age = age;
 		this.rank = rank;
+		this.coupons = new ArrayList<>();
+	}
+
+	/**
+	 * 
+	 */
+	public Member() {
+		super();
+	}
+
+	public static Member getInstance(int id, String password, String name, int age, int rank) {
+		Member member = new Member(id, password, name, age, rank);
+		member.coupons.add(Coupon.getInstance(1, 0.5, "最初の特典"));
+		member.coupons.add(Coupon.getInstance(2, 0.25, "今月の特典"));
+		return member;
+
+	}
+
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", password=" + password + ", name=" + name + ", age=" + age + ", rank=" + rank
+				+ ", coupons=" + coupons + "]";
+	}
+
+	public void showMember() {
+
+		System.out.println(toString());
+		System.out.println("***************** ");
 	}
 
 	/**
@@ -50,12 +83,6 @@ class Member {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	/**
-	 * 
-	 */
-	public Member() {
 	}
 
 	/**
@@ -100,10 +127,17 @@ class Member {
 		this.rank = rank;
 	}
 
-	public void showMember() {
-		System.out.println("***MEMBER DATA***");
-		System.out.printf("id:%d\npassword:%s\nname:%s\nage:%d\nrank:%d\n", this.id, this.password, this.name, this.age,
-				this.rank);
-		System.out.println("***************** ");
+	/**
+	 * @return coupons
+	 */
+	public List<Coupon> getCoupons() {
+		return coupons;
+	}
+
+	/**
+	 * @param coupons セットする coupons
+	 */
+	public void setCoupons(List<Coupon> coupons) {
+		this.coupons = coupons;
 	}
 }

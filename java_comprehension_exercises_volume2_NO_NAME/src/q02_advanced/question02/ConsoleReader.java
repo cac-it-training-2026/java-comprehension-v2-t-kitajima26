@@ -1,14 +1,10 @@
-package q01_basic.question06;
+package q02_advanced.question02;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * 標準入力を制御するクラス
- */
-class ConsoleReader {
-
+public class ConsoleReader {
 	/**
 	 * 文字列の標準入力。
 	 * 
@@ -17,7 +13,7 @@ class ConsoleReader {
 	 */
 	public String inputString() throws IOException, NumberFormatException {
 		//TODO ここから実装する
-		System.out.print("input password>>");
+		System.out.print("input new password>>");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		return br.readLine();
 	}
@@ -31,11 +27,10 @@ class ConsoleReader {
 	 */
 	public int inputNumber() throws IOException, NumberFormatException {
 		//TODO ここから実装する
-		System.out.print("input id>>");
+		System.out.print("input target id>>");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		return Integer.parseInt(br.readLine());
 
 	}
-
 }

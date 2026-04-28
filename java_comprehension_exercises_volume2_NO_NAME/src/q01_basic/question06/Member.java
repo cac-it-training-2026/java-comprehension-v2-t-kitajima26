@@ -1,7 +1,6 @@
-package q01_basic.question04;
+package q01_basic.question06;
 
-class Member {
-	//TODO ここから実装する
+public class Member extends AbstMember {
 	private int id;
 	private String password;
 	private String name;
@@ -22,6 +21,27 @@ class Member {
 		this.name = name;
 		this.age = age;
 		this.rank = rank;
+	}
+
+	/**
+	 * 
+	 */
+	public Member() {
+		super();
+	}
+
+	@Override
+	public void buyItem() {
+		// TODO 自動生成されたメソッド・スタブ
+		System.out.println(super.name + " purchased the item at 50% off");
+	}
+
+	@Override
+	public void showMember() {
+		System.out.println("***MEMBER DATA***");
+		System.out.printf("id:%d\npassword:%s\nname:%s\nage:%d\nrank:%d\n", this.id, this.password, this.name, this.age,
+				this.rank);
+		System.out.println("***************** ");
 	}
 
 	/**
@@ -50,12 +70,6 @@ class Member {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	/**
-	 * 
-	 */
-	public Member() {
 	}
 
 	/**
@@ -100,10 +114,4 @@ class Member {
 		this.rank = rank;
 	}
 
-	public void showMember() {
-		System.out.println("***MEMBER DATA***");
-		System.out.printf("id:%d\npassword:%s\nname:%s\nage:%d\nrank:%d\n", this.id, this.password, this.name, this.age,
-				this.rank);
-		System.out.println("***************** ");
-	}
 }

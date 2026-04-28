@@ -6,7 +6,11 @@ public class SystemMain01 {
 
 		System.out.println("===会員情報を表示します===");
 		//TODO ここから実装する
+		Member mem1 = new Member(1, "Passw0rd", "Miura Manabu", 28, 2);
+		Member mem2 = new Member(1, "aaaAAA", "Sato Kensuke", 43, 1);
 
+		mem1.showMember();
+		mem2.showMember();
 	}
 
 }

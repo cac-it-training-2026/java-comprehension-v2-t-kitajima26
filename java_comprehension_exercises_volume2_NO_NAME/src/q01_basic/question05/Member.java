@@ -1,10 +1,14 @@
-package q01_basic.question04;
+/**
+ * 
+ */
+package q01_basic.question05;
 
-class Member {
-	//TODO ここから実装する
+/**
+ * 
+ */
+public class Member extends AbstMember {
 	private int id;
 	private String password;
-	private String name;
 	private int age;
 	private int rank;
 
@@ -16,12 +20,32 @@ class Member {
 	 * @param rank
 	 */
 	public Member(int id, String password, String name, int age, int rank) {
-		super();
 		this.id = id;
 		this.password = password;
-		this.name = name;
+		super.name = name;
 		this.age = age;
 		this.rank = rank;
+	}
+
+	/**
+	 * 
+	 */
+	public Member() {
+		super();
+	}
+
+	@Override
+	public void buyItem() {
+		// TODO 自動生成されたメソッド・スタブ
+		System.out.println(super.name + " purchased the item at 50% off");
+	}
+
+	@Override
+	public void showMember() {
+		System.out.println("***MEMBER DATA***");
+		System.out.printf("id:%d\npassword:%s\nname:%s\nage:%d\nrank:%d\n", this.id, this.password, this.name, this.age,
+				this.rank);
+		System.out.println("***************** ");
 	}
 
 	/**
@@ -53,26 +77,6 @@ class Member {
 	}
 
 	/**
-	 * 
-	 */
-	public Member() {
-	}
-
-	/**
-	 * @return name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * @param name セットする name
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
 	 * @return age
 	 */
 	public int getAge() {
@@ -100,10 +104,4 @@ class Member {
 		this.rank = rank;
 	}
 
-	public void showMember() {
-		System.out.println("***MEMBER DATA***");
-		System.out.printf("id:%d\npassword:%s\nname:%s\nage:%d\nrank:%d\n", this.id, this.password, this.name, this.age,
-				this.rank);
-		System.out.println("***************** ");
-	}
 }
