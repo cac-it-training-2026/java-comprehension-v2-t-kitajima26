@@ -89,6 +89,7 @@ public class SystemMain {
 			} catch (IllegalInputException e) {
 				// TODO 自動生成された catch ブロック
 				System.out.println(e.getMessage());
+
 				//				e.printStackTrace();
 			}
 		} while (isCreated);
