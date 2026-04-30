@@ -13,7 +13,7 @@ public class ConsoleReader {
 	 */
 	public String inputString() throws IOException, NumberFormatException {
 		//TODO ここから実装する
-		System.out.print("input new password>>");
+		System.out.print("input password>>");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		return br.readLine();
 	}
@@ -27,7 +27,7 @@ public class ConsoleReader {
 	 */
 	public int inputNumber() throws IOException, NumberFormatException {
 		//TODO ここから実装する
-		System.out.print("input target id>>");
+		System.out.print("input id>>");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		return Integer.parseInt(br.readLine());

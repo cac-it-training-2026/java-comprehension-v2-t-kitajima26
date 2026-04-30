@@ -2,8 +2,6 @@ package q02_advanced.question03;
 
 import java.util.List;
 
-import q02_advanced.question02.Member;
-
 public class MemberManager {
 	/**
 	 * インスタンス化の禁止

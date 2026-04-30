@@ -1,5 +1,8 @@
 package q03_extra;
 
+import java.text.ParseException;
+import java.util.List;
+
 /**
  * この問題は採点対象外です。時間が余った際に解いてください
  * また、テストクラスはありません。問題文と出力例を参考に実装してください。
@@ -51,7 +54,7 @@ input birthday>>2000/8/32
  */
 public class SystemMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException, SystemErrorException, IllegalInputException {
 
 		MemberStorage memberStorage = new MemberStorage();
 		CreateUserService createUserService = new CreateUserService(memberStorage);
@@ -63,6 +66,38 @@ public class SystemMain {
 
 		System.out.println("新規に会員登録します。必要事項を入力してください");
 		//TODO ここから実装する
+		MemberIdReader mIr = new MemberIdReader();
+		MemberPasswordReader mPr = new MemberPasswordReader();
+		MemberNameReader mNr = new MemberNameReader();
+		MemberBirthdayReader mBr = new MemberBirthdayReader();
+
+		do {
+			isCreated = true;
+			try {
+				isCreated = true;
+				System.out.print("input id[1-9]>>");
+				inputId = (int) mIr.input();
+				System.out.print("input password>>");
+				inputPassword = (String) mPr.input();
+				System.out.print("input name>>");
+				inputName = (String) mNr.input();
+				System.out.print("input birthday>>");
+				inputBirthday = (String) mBr.input();
+				createUserService.execute(inputId, inputPassword, inputName, inputBirthday);
+				System.out.println("ユーザーが作成されました");
+				isCreated = false;
+			} catch (IllegalInputException e) {
+				// TODO 自動生成された catch ブロック
+				System.out.println(e.getMessage());
+				//				e.printStackTrace();
+			}
+		} while (isCreated);
+
+		List<Member> members = memberStorage.getMembers();
+
+		System.out.println("ユーザー情報を表示します。");
+
+		MemberManager.ShowCreateUser(members, inputId);
 
 	}
 
