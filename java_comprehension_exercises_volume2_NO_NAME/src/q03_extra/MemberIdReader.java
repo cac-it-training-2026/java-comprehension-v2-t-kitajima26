@@ -1,5 +1,8 @@
 package q03_extra;
 
+/**
+ *  idの情報の入力を制御するクラス
+ */
 public class MemberIdReader implements IConsoleReader {
 
 	@Override

@@ -1,5 +1,8 @@
 package q03_extra;
 
+/**
+ * ユーザーの入力関連の例外処理クラス
+ */
 public class IllegalInputException extends Exception {
 	public IllegalInputException() {
 		super();

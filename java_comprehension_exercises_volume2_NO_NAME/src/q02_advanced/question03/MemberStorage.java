@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class MemberStorage {
-
+	//フィールド　Member型のリスト
 	private List<Member> members;
 
 	/**

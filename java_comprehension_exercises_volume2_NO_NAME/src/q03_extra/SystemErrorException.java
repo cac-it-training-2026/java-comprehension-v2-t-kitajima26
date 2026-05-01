@@ -7,18 +7,18 @@ public class SystemErrorException extends Exception {
 
 	public SystemErrorException(String message, Throwable cause, boolean enableSuppression,
 			boolean writableStackTrace) {
-		super();
+		super(message, cause, enableSuppression, writableStackTrace);
 	}
 
 	public SystemErrorException(String message, Throwable cause) {
-		super();
+		super(message, cause);
 	}
 
 	public SystemErrorException(String message) {
-		super();
+		super(message);
 	}
 
 	public SystemErrorException(Throwable cause) {
-		super();
+		super(cause);
 	}
 }

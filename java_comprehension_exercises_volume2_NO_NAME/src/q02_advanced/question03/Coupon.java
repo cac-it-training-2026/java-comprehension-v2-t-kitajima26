@@ -1,6 +1,7 @@
 package q02_advanced.question03;
 
 public class Coupon {
+	//	フィールド　id、割引率、クーポンの説明
 	private int id;
 	private double discountRate;
 	private String description;
@@ -22,6 +23,13 @@ public class Coupon {
 		this.description = description;
 	}
 
+	/**
+	 * 入力をもとに新たなクーポンのインスタンスを生成し、戻り値として生成したCouponを返す
+	 * @param id
+	 * @param discountRate
+	 * @param description
+	 * @return
+	 */
 	public static Coupon getInstance(int id, double discountRate, String description) {
 		Coupon coupon = new Coupon(id, discountRate, description);
 		return coupon;

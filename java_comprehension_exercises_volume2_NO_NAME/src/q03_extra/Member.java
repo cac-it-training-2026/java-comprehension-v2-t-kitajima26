@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Member {
+	//	フィールド id、パスワード、名前、誕生日、ランク、クーポンのリスト
 	private int id;
 	private String password;
 	private String name;
@@ -39,6 +40,15 @@ public class Member {
 		super();
 	}
 
+	/**
+	 * 取得した情報をもとに新たなMemberインスタンスを生成、クーポン２つの登録を行い、作成したMemberを返す
+	 * @param id
+	 * @param password
+	 * @param name
+	 * @param birthday
+	 * @return
+	 * @throws ParseException
+	 */
 	public static Member getInstance(int id, String password, String name, String birthday) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 		Date dBirthday;
@@ -52,6 +62,9 @@ public class Member {
 
 	}
 
+	/**
+	 * 会員情報を出力する
+	 */
 	public void showMember() {
 
 		System.out.println(toString());

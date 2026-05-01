@@ -2,6 +2,7 @@ package q01_basic.question03;
 
 class Member {
 	//TODO ここから実装する
+	//	フィールド　名前、年齢、ランク
 	private String name;
 	private int age;
 	private int rank;
@@ -65,6 +66,9 @@ class Member {
 		this.rank = rank;
 	}
 
+	/**
+	 * 	会員情報を表示
+	 */
 	public void showMember() {
 		System.out.println("***MEMBER DATA***");
 		System.out.printf("name:%s\nage:%d\nrank:%d\n", this.name, this.age, this.rank);

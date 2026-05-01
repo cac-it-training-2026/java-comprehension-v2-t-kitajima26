@@ -6,7 +6,9 @@ public class SystemMain06 {
 
 	public static void main(String[] args) {
 
+		//		ConsoleReaderクラスのインスタンス生成
 		ConsoleReader cr = new ConsoleReader();
+
 		int inputId = 0;
 		String inputPassword = null;
 		String name = "Miura Manabu";
@@ -15,6 +17,8 @@ public class SystemMain06 {
 
 		System.out.println("---CREATE MEMBER DATA---");
 		//TODO ここから実装する
+
+		//		会員登録のための入力を行う。エラー発生時はキャッチしてシステム終了
 		try {
 			inputId = cr.inputNumber();
 			inputPassword = cr.inputString();
@@ -27,7 +31,10 @@ public class SystemMain06 {
 			e.printStackTrace();
 			return;
 		}
+
+		//		入力された情報をもとに会員登録を行う
 		Member mem = new Member(inputId, inputPassword, "Miura Manabu", 28, 2);
+		//		登録されたMemberの会員情報を表示
 		mem.showMember();
 	}
 

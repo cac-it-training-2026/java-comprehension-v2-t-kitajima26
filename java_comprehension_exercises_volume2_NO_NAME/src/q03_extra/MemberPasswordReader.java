@@ -1,5 +1,8 @@
 package q03_extra;
 
+/**
+ * パスワードの情報の入力を制御するクラス
+ */
 public class MemberPasswordReader implements IConsoleReader {
 
 	@Override

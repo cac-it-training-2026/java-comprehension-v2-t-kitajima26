@@ -1,5 +1,8 @@
 package q03_extra;
 
+/**
+ * 名前の情報の入力を制御するクラス
+ */
 public class MemberNameReader implements IConsoleReader {
 
 	@Override

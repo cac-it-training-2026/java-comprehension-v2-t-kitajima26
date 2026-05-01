@@ -1,6 +1,7 @@
 package q02_advanced.question01;
 
 public class Coupon {
+	//	フィールド　id、割引率、クーポンの説明
 	private int id;
 	private double discountRate;
 	private String description;

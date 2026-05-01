@@ -2,6 +2,9 @@ package q03_extra;
 
 import java.text.SimpleDateFormat;
 
+/**
+ * 誕生日情報の入力を制御するクラス
+ */
 public class MemberBirthdayReader implements IConsoleReader {
 
 	@Override

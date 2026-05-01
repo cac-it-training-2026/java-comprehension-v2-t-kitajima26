@@ -1,6 +1,7 @@
 package q01_basic.question06;
 
 public class Member extends AbstMember {
+	//	フィールド　id、パスワード、名前、年齢、ランク
 	private int id;
 	private String password;
 	private String name;

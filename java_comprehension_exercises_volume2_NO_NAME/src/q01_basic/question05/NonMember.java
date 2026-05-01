@@ -1,6 +1,11 @@
 package q01_basic.question05;
 
 public class NonMember extends AbstMember {
+
+	/**
+	 * 引数nameを使用してsuperクラスのフィールドに登録
+	 * @param name
+	 */
 	public NonMember(String name) {
 		super.name = name;
 	}

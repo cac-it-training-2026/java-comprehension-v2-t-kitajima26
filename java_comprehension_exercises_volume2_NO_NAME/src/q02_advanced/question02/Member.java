@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
+	//	フィールド id、パスワード、名前、年齢、ランク、クーポンのリスト
 	private int id;
 	private String password;
 	private String name;
@@ -35,6 +36,15 @@ public class Member {
 		super();
 	}
 
+	/**
+	 * 取得した情報をもとに新たなMemberインスタンスを生成、クーポン２つの登録を行い、作成したMemberを返す
+	 * @param id
+	 * @param password
+	 * @param name
+	 * @param age
+	 * @param rank
+	 * @return
+	 */
 	public static Member getInstance(int id, String password, String name, int age, int rank) {
 		Member member = new Member(id, password, name, age, rank);
 		member.coupons.add(Coupon.getInstance(1, 0.5, "最初の特典"));
@@ -49,6 +59,9 @@ public class Member {
 				+ ", coupons=" + coupons + "]";
 	}
 
+	/**
+	 * 会員情報を出力する
+	 */
 	public void showMember() {
 
 		System.out.println(toString());

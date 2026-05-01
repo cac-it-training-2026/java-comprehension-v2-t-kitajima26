@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
+	//	フィールド　id、パスワード、名前、年齢、ランク、クーポンのリスト
 	private int id;
 	private String password;
 	private String name;
@@ -47,6 +48,9 @@ public class Member {
 				+ ", coupons=" + coupons + "]";
 	}
 
+	/**
+	 * 	会員情報をtoStringメソッドを用いて出力
+	 */
 	public void showMember() {
 
 		System.out.println(toString());

@@ -71,8 +71,10 @@ public class SystemMain {
 		MemberNameReader mNr = new MemberNameReader();
 		MemberBirthdayReader mBr = new MemberBirthdayReader();
 
+		//		id, passwordの入力チェック・エラー発生時はキャッチして最初に戻る
+		//		入力された情報をもとにユーザー作成・成功した場合はループから抜け出す
 		do {
-			isCreated = true;
+			isCreated = false;
 			try {
 				isCreated = true;
 				System.out.print("input id[1-9]>>");
@@ -85,19 +87,20 @@ public class SystemMain {
 				inputBirthday = (String) mBr.input();
 				createUserService.execute(inputId, inputPassword, inputName, inputBirthday);
 				System.out.println("ユーザーが作成されました");
-				isCreated = false;
+				isCreated = true;
 			} catch (IllegalInputException e) {
 				// TODO 自動生成された catch ブロック
 				System.out.println(e.getMessage());
 
 				//				e.printStackTrace();
 			}
-		} while (isCreated);
+		} while (!isCreated);
 
+		//		Member型のリストをMemberStrageから取得
 		List<Member> members = memberStorage.getMembers();
 
 		System.out.println("ユーザー情報を表示します。");
-
+		//作成したユーザーの情報を出力
 		MemberManager.ShowCreateUser(members, inputId);
 
 	}

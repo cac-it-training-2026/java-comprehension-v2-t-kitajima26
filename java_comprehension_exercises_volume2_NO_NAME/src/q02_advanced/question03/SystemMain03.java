@@ -6,9 +6,12 @@ public class SystemMain03 {
 
 	public static void main(String[] args) {
 
+		//		ConsoleReaderクラスのインスタンス生成
 		ConsoleReader cr = new ConsoleReader();
+		//		MemberStorageクラスのインスタンス生成
 		MemberStorage memberstrage = new MemberStorage();
 
+		//		LoginServiseクラスのインスタンス生成		
 		LoginService loginService = new LoginService(new MemberStorage());
 		System.out.println("ログイン情報を入力してください");
 		boolean isLogin = false;
@@ -17,6 +20,7 @@ public class SystemMain03 {
 
 		int id;
 		String password;
+		//		id, passwordの入力チェック・エラー発生時はキャッチして最初に戻る
 		do {
 			isLogin = false;
 			try {
@@ -30,7 +34,7 @@ public class SystemMain03 {
 				System.out.println("不正な入力です。再度入力してください");
 				continue;
 			}
-
+			//	入力された情報をもとにログイン・成功した場合はループから抜け出す
 			member = loginService.doLogin(id, password);
 			if (member != null) {
 				System.out.println("ログインに成功しました");
@@ -40,6 +44,7 @@ public class SystemMain03 {
 			}
 		} while (!isLogin);
 
+		//		ログインしたユーザーの会員情報を出力
 		System.out.println("ログインユーザー情報を表示します。");
 		member.showMember();
 

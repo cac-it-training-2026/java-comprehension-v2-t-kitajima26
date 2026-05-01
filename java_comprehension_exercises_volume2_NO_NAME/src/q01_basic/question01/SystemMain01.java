@@ -24,6 +24,7 @@ public class SystemMain01 {
 		//TODO ここから実装する
 		System.out.println("---SHOW DATA--- ");
 
+		//		Memberクラスのインスタンス作成、名前と年齢とランクを設定
 		Member member1 = new Member();
 		member1.name = ":Miura Manabu";
 		member1.age = 24;
@@ -34,6 +35,7 @@ public class SystemMain01 {
 		member2.age = 36;
 		member2.rank = 2;
 
+		//		会員の情報を表示
 		member1.showMember();
 		member2.showMember();
 	}
